@@ -1,0 +1,75 @@
+<%- include('../partials/header'); %>
+
+<div class="container">
+  <div class="row mt-3">
+      <div class="col-md-3">
+          <p> Yelp Camp </p>
+          <div class="lead">
+              <div class="list-group">
+                  <li class="list-group-item active"> info 1 </li>
+                  <li class="list-group-item "> info 2 </li> 
+                  <li class="list-group-item "> info 3 </li> 
+              </div>
+          </div>
+      </div>
+      <div class="col-md-9">
+          <div class="card">
+                  <img class="img-responsive" src="<%= campground.image%>" >
+	              <div class="text-right"> 
+	                   <h4>Rs. <%= campground.price %>/night </h4>
+	               </div>
+	               <div class="text-left" >
+	                  	<h2 class="text-center text-info "> <%=campground.name %> </h2>
+	                    <p> <%=campground.description %> </p>
+                      <p>
+                         <em>
+                              Submitted By❤️ <%= campground.author.username %> 
+                          </em>
+                     </p>
+                     <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-warning " href="/campgrounds/<%= campground._id%>/edit"> Edit
+                        </a>
+                        <form id="delete-form" action="/campgrounds/<%=  campground._id%>?_method=DELETE" method="POST">
+                          <button class="btn btn-danger">Delete </button>
+                        </form>
+                     <% } %>
+	               </div     
+               </div>    
+           </div>
+           <div class="card mt-4">
+              <div class="card-body">
+                <div class="text-center mr-4 mt-2 bg-grey">
+                   <a class="btn btn-success" href="/campgrounds/<%= campground._id%>/comments/new"> Add New Comment</a>
+                </div>
+                <hr>
+                    <% campground.comments.forEach(function(comment){ %>
+                       <strong>Submitted By: <%=comment.author.username %> </strong> 
+                        <p class="card-title">
+                                <%= comment.text %> 
+                        </p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id))
+                        { %>
+                            <a class="btn btn-warning btn-md card-text" 
+                               href="/campgrounds/<%= campground._id%>/comments/<%=comment._id%>/edit">Edit
+                            </a>
+                            <form id="delete-form" action="/campgrounds/<%= campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="delete" class="btn btn-danger">
+                        </form>
+                        <% } %>
+                        <br>
+                    <% }) %> 
+              </div>
+           </div>
+
+                   
+                   <div class="row">
+                       <div class="col-sm-12">
+  
+                </div>    
+           </div>
+      </diV
+  </div>
+</div>
+
+
+<%- include('../partials/footer'); %>

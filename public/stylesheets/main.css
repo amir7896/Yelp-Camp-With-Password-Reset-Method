@@ -1,0 +1,73 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+#crd{
+	height: 290px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+.card img{
+	width: 100%;
+}
+.card {
+	padding: 0;
+}
+.text-left{
+	padding: 9px;
+}
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #1abc9c;
+}#forgetButton{
+	margin-left: 1px;
+	width: 180px;
+}
+
+.footer p {
+	margin-top: 15px;
+	font-size: 16px;
+    color: #fff;
+}
+#delete-form{
+	display: inline;
+}
+#forms{
+	width:30%; 
+	margin:auto auto;
+}
+input{
+	width: 300px;
+}
+#forms-forget input{
+	width: 300px;
+}
+#forms-forget{
+	width:30%; 
+	margin:25px auto
+}
+#loginbBtn{
+	width: 300px;
+}
+#signupBtn{
+	width: 300px;
+}
+

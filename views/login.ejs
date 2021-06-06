@@ -1,0 +1,19 @@
+<%- include('./partials/header'); -%>
+
+<div id="forms">
+    <form action="/login" method="POST" class="mt-0">
+    <h1 id="login-h1" class="mt-2"> Login </h1>
+
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input type="submit" id="loginbBtn"value="Login!" class="btn btn-lg btn-success btn-block">
+        </div>
+    </form>
+    <a href="/forget" id="forgetButton" class="btn btn-info">Forget Password</a>
+</div> 
+<%- include('./partials/footer'); -%>
